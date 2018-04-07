@@ -1,0 +1,62 @@
+.quote-block{
+  margin: 0 auto;
+  background-color: rgb(237, 237, 237);
+  width: 600px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 ;
+  border-radius: 8px;
+
+}
+.wrap{
+  padding-top: 100px;
+}
+.container{
+  padding-top: 40px;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto 50px 50px;
+  grid-template-areas:
+    ". q q q q q q ."
+    ". . . . . a a ."
+    ". tu tu . . nq nq . "
+  ;
+}
+.quote{
+  transition: background-color .7s ease;
+  text-align: center;
+  padding-top: 5px;
+  grid-area: nq;
+  border-radius: 4px;
+  background-color: #16a085;
+  text-decoration: none;
+  height: 27px;
+  color: white;
+}
+.quote:hover{
+  opacity:0.8;
+  color: white;
+  text-decoration: none;
+}
+.quote:active{
+  text-decoration: none;
+}
+.tweet{
+  grid-area: tw;
+}
+.author{
+  text-align: center;
+  font-size: 15px;
+  grid-area: a
+}
+body{
+  transition: background-color .7s ease;
+}
+.quote-text{
+
+  transition: color .7s ease;
+
+  font-size: 33px;
+  font-weight: 600;
+  text-align: center;
+  grid-area: q;
+}
