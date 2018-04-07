@@ -21,11 +21,27 @@
     ". tu tu . . nq nq . "
   ;
 }
+#tumb{
+    grid-area: tu;
+    width: 30px;
+
+}
+.twat{
+  grid-area: tu;
+  padding-left: 38px;
+}
+#twit{
+    grid-area: tu;
+    width: 30px;
+}
+#quote{
+    grid-area: nq;
+}
 .quote{
   transition: background-color .7s ease;
   text-align: center;
   padding-top: 5px;
-  grid-area: nq;
+  font-size: 18px;
   border-radius: 4px;
   background-color: #16a085;
   text-decoration: none;
@@ -43,9 +59,16 @@
 .tweet{
   grid-area: tw;
 }
+.credit{
+  color: white;
+  text-align: center;
+  padding-top: 8px;
+  font-size: 18px;
+}
 .author{
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
+
   grid-area: a
 }
 body{

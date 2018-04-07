@@ -6,45 +6,42 @@ var quotesArr = ['"Technology is just a tool. In terms of getting the kids worki
 '"Just because something doesn’t do what you planned it to do doesn’t mean it’s useless."',
 '"It has become appallingly obvious that our technology has exceeded our humanity."']
 var authorsArr = ['Bill Gates','Dean Kamen','David Wong','Thomas Edison', 'Albert Einstein']
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
 var quoteObj = {
   quoteId: undefined,
-  quoteCol: undefined
+  quoteCol: undefined,
+  twitquery: "https://twitter.com/intent/tweet?text="
 }
 
 function setQuoteData() {
-
   var quote = getRandomInt(quotesArr.length);
   var author = quote;
   var color = getRandomInt(colorArr.length);
-
-  if (quote === quoteObj.quoteId || quote === quoteObj.quoteCol) {
-
+  if (quote === quoteObj.quoteId || color === quoteObj.quoteCol) {
     setQuoteData();
-
-  }
-  else {
+  }else {
     $(".quote-text").fadeOut(function(){
       $(this).text(quotesArr[quote]);
     }).fadeIn();
     // $(".quote-text").text();
     $(".quote-text").css("color", colorArr[color]);
-    $("#quote").css("background-color", colorArr[color]);
+    $(".quote").css("background-color", colorArr[color]);
     $("body").css("background-color", colorArr[color]);
     $(".author").fadeOut(function(){
-      $(this).text(authorsArr[quote]);
+      $(this).text(`-${authorsArr[quote]}`);
     }).fadeIn();
-    // $(".author").text(`-${authorsArr[author]}`)
+
+    $("#twit").attr("href", quoteObj.twitquery.concat(quotesArr[quote]));
+
+
     quoteObj.quoteId = quote;
     quoteObj.quoteCol = color;
   }
-
 }
-
-
 $(document).ready(function(){
   setQuoteData();
   $( "#quote" ).click(function() {
