@@ -14,7 +14,8 @@ function getRandomInt(max) {
 var quoteObj = {
   quoteId: undefined,
   quoteCol: undefined,
-  twitquery: "https://twitter.com/intent/tweet?text="
+  twitquery: "https://twitter.com/intent/tweet?text=",
+  encodedQuote: undefined
 }
 
 function setQuoteData() {
@@ -27,6 +28,7 @@ function setQuoteData() {
     $(".quote-text").fadeOut(function(){
       $(this).text(quotesArr[quote]);
     }).fadeIn();
+    quoteObj.encodedQuote = encodeURIComponent(quotesArr[quote]);
     // $(".quote-text").text();
     $(".quote-text").css("color", colorArr[color]);
     $(".quote").css("background-color", colorArr[color]);
@@ -35,7 +37,7 @@ function setQuoteData() {
       $(this).text(`-${authorsArr[quote]}`);
     }).fadeIn();
 
-    $("#twit").attr("href", quoteObj.twitquery.concat(quotesArr[quote]));
+    $("#twit").attr("href", `${quoteObj.twitquery}${quoteObj.encodedQuote}`);
 
 
     quoteObj.quoteId = quote;
