@@ -1,7 +1,7 @@
 .quote-block{
   margin: 0 auto;
   background-color: rgb(237, 237, 237);
-  width: 600px;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 ;
   border-radius: 8px;
 
@@ -40,8 +40,8 @@
 .quote{
   transition: background-color .7s ease;
   text-align: center;
-  padding-top: 5px;
   font-size: 18px;
+  padding-top: 5px;
   border-radius: 4px;
   background-color: #16a085;
   text-decoration: none;
@@ -55,6 +55,10 @@
 }
 .quote:active{
   text-decoration: none;
+  opacity: 100%;
+}
+.quote:visited{
+  opacity: 100%;
 }
 .tweet{
   grid-area: tw;
@@ -75,11 +79,49 @@ body{
   transition: background-color .7s ease;
 }
 .quote-text{
-
   transition: color .7s ease;
-
-  font-size: 33px;
   font-weight: 600;
   text-align: center;
   grid-area: q;
+}
+
+@media all and (min-width: 960px) {
+    .quote-block{
+        width: 600px;
+    }
+    .quote-text{
+      font-size: 18px;
+    }
+
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+  .quote-block{
+      width: 400px;
+  }
+  .quote-text{
+    font-size: 17px;
+  }
+  .author{
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width: 599px) and (min-width: 320px) {
+  .wrap{
+    padding-top: 140px;
+  }
+  .quote-block{
+    width: 325px;
+  }
+  .quote-text{
+    font-size: 15px;
+  }
+  .author{
+    font-size: 12px;
+  }
+  .quote{
+    font-size: 13px;
+  }
+
 }
